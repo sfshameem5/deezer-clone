@@ -16,10 +16,10 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <aside class="col-2">
+            <aside class="col-2" id="sidebar">
                 <h1 class="display-4">Deezer</h1>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="search" class="form-control" placeholder="Search" onkeyup="results(), search()" id="search">
                     <div class="input-group-append">
                         <span class="btn btn-primary">
                             <i class="fa fa-search"></i>
@@ -27,53 +27,60 @@
                     </div>
                 </div>
                 <ul class="list-unstyled">
-                    <li class="mb-1 mt-1 ml-auto mr-auto">Home</li>
-                    <li class="mb-1 mt-1 ml-auto mr-auto">Hear This</li>
-                    <li>
+                    <li class="mt-1 ml-auto mr-auto">Home</li>
+                    <li class="mt-1 ml-auto mr-auto">Hear This</li>
+                    <li class="mt-2">
                         <i class="fa fa-user"></i>
                         My Music
                         <i class="fa fa-cog"></i>
                     </li>
-                    <li class="mb-1 mt-1 ml-auto mr-auto">
+                    <li class="mt-2 mb-2 ml-auto mr-auto">
                         You're on Free
                         <button class="btn btn-sm btn-primary">
                             Subscribe
                         </button>
                     </li>
-                    <li class="mb-1 mt-1 ml-auto mr-auto">
+                    <li class="ml-auto mb-1 mr-auto">
                         <i class="fa fa-heart"></i>
                         Favorite Tracks
                     </li>
-                    <li class="mb-1 mt-1 ml-auto mr-auto">
+                    <li class="mb-1 ml-auto mr-auto">
                         <i class="fa fa-play"></i>
                         Playlists
                     </li>
-                    <li class="mb-1 mt-1 ml-auto mr-auto">
+                    <li class="mb-1 ml-auto mr-auto">
                         <i class="fa fa-circle-notch"></i>
                         Albums
                     </li>
-                    <li class="mb-1 mt-1 ml-auto mr-auto">
+                    <li class="mb-1 ml-auto mr-auto">
                         <i class="fa fa-clock"></i>
                         Feed
                     </li>
-                    <li class="mb-1 mt-1 ml-auto mr-auto">
+                    <li class="mb-1 ml-auto mr-auto">
                         <i class="fa fa-play-circle"></i>
                         Apps
                     </li>
                 </ul>
                 <div class="row">
-                    <div class="player ml-3 mt-5 ml-auto mr-auto">
-                        <a class="btn btn-outline-success" title="Add to Favorite Tracks">
-                            <i class="fa fa-heart"></i>
-                        </a>
-                        <a class="btn btn-outline-success" title="View Lyrics">
-                            <i class="fa fa-microphone"></i>
-                        </a>
-                        <a class="btn btn-outline-success" title="Add To Favorites">
-                            <i class="fa fa-music"></i>
-                        </a>
+                    <div class="col-12 bg-primary">
+                        <div class="row">
+                            <li class="mt-4 list-unstyled ml-auto mr-auto">
+                                See You Again - Charlie Puth
+                            </li>
+                        </div>
+                        <div class="player mb-4 mt-2 mr-auto" style="margin-left: 30px;">
+                            <a class="btn btn-outline-success" title="Add to Favorite Tracks">
+                                <i class="fa fa-heart"></i>
+                            </a>
+                            <a class="btn btn-outline-success" title="View Lyrics">
+                                <i class="fa fa-microphone"></i>
+                            </a>
+                            <a class="btn btn-outline-success" title="Add To Favorites">
+                                <i class="fa fa-music"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="player ml-3 mt-5 ml-auto mr-auto">
+                    <div class="player ml-3 mb-1 mt-3 ml-auto mr-auto">
                         <a class="btn btn-outline-success" title="Back">
                             <i class="fa fa-chevron-circle-left"></i>
                         </a>
@@ -84,7 +91,7 @@
                             <i class="fa fa-chevron-circle-right"></i>
                         </a>
                     </div>
-                    <div class="player ml-3 mt-5 mb-2 ml-auto mr-auto">
+                    <div class="player ml-3 mt-3 mb-2 ml-auto mr-auto">
                         <a class="btn btn-outline-success" title="Mute">
                             <i class="fas fa-volume-up"></i>
                         </a>
@@ -100,8 +107,50 @@
                     </div>
                 </div>
             </aside>
+            <div id="search-box" class="bg-dark text-white">
+                <h3></h3>
+            </div>
+            <main class="col" id="content">
+                <div class="card text-center mt-3 text-primary">
+                    <div class="card-body row">
+                        <h5 class="card-title col">
+                            Flow - Your Personalized Soundtrack
+                            <br />
+                            <button class="btn btn-primary mt-3">
+                                <i class="fa fa-play-circle fa-2x"></i>
+                            </button>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="col-12 mt-3">
+                        Browse >
+                        <br /> Explore Podcasts and Other Channels
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="card col text-white pt-4 pb-4 text-center ml-1" id="dance">
+                        <p class="card-title">Dance & EDM</p>
+                    </div>
+                    <div class="card col text-white pt-4 pb-4 text-center ml-1" id="popular">
+                        <p class="card-title">Popular</p>
+                    </div>
+                    <div class="card col text-white pt-4 pb-4 text-center ml-1" id="pop">
+                        <p class="card-title">Pop</p>
+                    </div>
+                    <div class="card col text-white pt-4 pb-4 text-center ml-1" id="charts">
+                        <p class="card-title">Charts</p>
+                    </div>
+                    <div class="card col text-white pt-4 pb-4 text-center ml-1 mr-1" id="r-n-b">
+                        <p class="card-title">R`N`B</p>
+                    </div>
+                </div>
+
+            </main>
         </div>
     </div>
+    <script src="../node_Modules/jquery/dist/jquery.min.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
